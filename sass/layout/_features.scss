@@ -3,6 +3,9 @@
 }
 .features-item {
   width: 270px;
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
 }
 .features-container {
   display: flex;
@@ -14,9 +17,7 @@
   border-radius: 4px;
   margin-bottom: 30px;
 }
-.features-item:not(:last-child) {
-  margin-right: 30px;
-}
+
 .features-subtitle {
   margin-bottom: 10px;
   font-weight: 700;

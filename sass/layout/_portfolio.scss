@@ -4,8 +4,10 @@
   justify-content: center;
 }
 
-.filter-item:not(:last-child) {
-  margin-right: 8px;
+.filter-item {
+  &:not(:last-child) {
+    margin-right: 8px;
+  }
 }
 .filter-btn {
   padding: 6px 22px;
@@ -21,13 +23,14 @@
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    color: var(--third-color);
+    background-color: var(--accent-color);
+    box-shadow: var(--btn-shadow);
+  }
 }
-.filter-btn:hover,
-.filter-btn:focus {
-  color: var(--third-color);
-  background-color: var(--accent-color);
-  box-shadow: var(--btn-shadow);
-}
+
 .portfolio-list {
   display: flex;
   flex-wrap: wrap;
@@ -58,21 +61,22 @@
   height: 100%;
   transform: translateY(100%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  .portfolio-link:hover &,
+  .portfolio-link:focus & {
+    transform: translateY(0);
+  }
 }
 .portfolio-link {
   display: block;
   text-decoration: none;
   color: inherit;
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    box-shadow: var(--portfolio-shadow);
+  }
 }
-.portfolio-link:hover,
-.portfolio-link:focus {
-  box-shadow: var(--portfolio-shadow);
-}
-.portfolio-link:hover .overlay,
-.portfolio-link:focus .overlay {
-  transform: translateY(0);
-}
+
 .project-card {
   padding: 20px 24px;
   border: 1px solid #eeeeee;
